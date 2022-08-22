@@ -10,18 +10,15 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   final List<String> _listItem = [
-    'assets/images/arabia2.jpg',
-    'assets/images/arabia3.webp',
-    'assets/images/arabia5.webp',
-    'assets/images/arabia6.webp',
-    'assets/images/arabia7.webp',
-    'assets/images/arabia8.webp',
-    'assets/images/arabia9.webp',
-    'assets/images/arabia10.webp',
-    'assets/images/arabia11.webp',
-    'assets/images/arabia12.webp',
-    'assets/images/arabia13.webp',
+    'assets/images/iphone1.webp',
+    'assets/images/iphone2.webp',
+    'assets/images/iphone3.webp',
+    'assets/images/iphone4.webp',
+    'assets/images/iphone5.webp',
+    'assets/images/iphone6.webp',
+    'assets/images/iphone7.webp',
   ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -29,89 +26,85 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.deepOrange,
       appBar: AppBar(
         centerTitle: true,
-        leading: Icon(Icons.menu),
-        title: Text('Saudia Arabia'),
         backgroundColor: Colors.deepOrange,
+        leading: Icon(Icons.menu),
+        title: Text('Apple Products'),
         actions: [
           Padding(padding: EdgeInsets.all(10),
             child: Container(
-              width: 36,
-              height: 30,
+              height: 30, width: 36,
               decoration: BoxDecoration(
-                  color: Colors.orange,
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Center(
-                child: Text('7'),
-              ),
-            ),)
+                color: Colors.orange,
+                borderRadius: BorderRadius.
+                circular(10),
+              ), child: Center(
+              child: Text('7',style:
+                TextStyle(fontSize: 22),),
+            ),
+            ),
+          ),
         ],
       ),
       body: Container(
-        padding: EdgeInsets.all(15),
+        padding: EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           children: [
-            // header
             Container(
               height: 240,
+              width: double.infinity,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/arabia13.webp'),
-                    fit: BoxFit.cover,
-                  )
-              ),
-              child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    gradient: LinearGradient(
-                        begin: Alignment.bottomRight,
-                        colors: [
-                          Colors.black.withOpacity(0.8),
-                          Colors.black.withOpacity(0.6),
-                          Colors.black.withOpacity(0.4),
-                          Colors.black.withOpacity(0.2)
-                        ]
-                    )
+                borderRadius: BorderRadius.circular(20),
+                image: DecorationImage(
+                  image: AssetImage('assets/images/iphone5.webp'),
+                  fit: BoxFit.cover
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text('A trip to Arabia',style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                    ),),
-                    SizedBox(height: 25,),
-                    Container(
-                      width: double.infinity,
-                      height: 40,
-                      margin: EdgeInsets.symmetric(horizontal: 40),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white
-                      ),
-                      child: Center(
-                        child: Text('Travel Now',style: TextStyle(
-                          color: Colors.grey[700],),
-                        ),),
-                    ),
-                    SizedBox(height: 25,),
-                  ],
+              ),child: Container(
+          decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          gradient: LinearGradient(
+              begin: Alignment.bottomRight,
+              colors: [
+                Colors.black.withOpacity(0.8),
+                Colors.black.withOpacity(0.6),
+                Colors.black.withOpacity(0.4),
+                Colors.black.withOpacity(0.2),
+              ]
+          ),),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text('Lifestyle sale',style:
+                    TextStyle(fontSize: 35,
+                    color: Colors.white),),
+                SizedBox(height: 35,),
+                Container(
+                  height: 44,
+                  width: double.infinity,
+                  margin: EdgeInsets.symmetric(horizontal: 50),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Center(
+                    child: Text('Shop Now'),
+                  ),
                 ),
-              ),
-            ),SizedBox(height: 15,),
-            Expanded(
+                  SizedBox(height: 25,)
+                ],
+              ),),
+            ),
+            SizedBox(height: 10,),
+            Expanded(child: Container(
               child: GridView.count(
-                crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 crossAxisCount: 1,
                 children: _listItem.map((item) => cellOfList(item)).toList(),
-              ),),
+              ),
+            ),),
           ],
         ),
       ),
     );
-
   }
   Widget cellOfList(String item){
     return Card(
@@ -120,7 +113,8 @@ class _HomePageState extends State<HomePage> {
       child: Container(
         padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.
+            circular(20),
           image: DecorationImage(
             image: AssetImage(item),
             fit: BoxFit.cover,
@@ -130,10 +124,11 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(Icons.favorite, color: Colors.red,)
+            Icon(Icons.favorite,color: Colors.red,
+            size: 35,)
           ],
         ),
       ),
     );
   }
-}
+  }
