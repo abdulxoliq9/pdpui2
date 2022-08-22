@@ -125,7 +125,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Icon(Icons.favorite,color: Colors.red,
-            size: 35,)
+            size: 36,)
           ],
         ),
       ),
